@@ -94,11 +94,13 @@ class Student
     # binding.pry
   end
 
-  def self.first_X_students_in_grade_10(name)
+  def self.first_X_students_in_grade_10(number)
     sql = <<-SQL
-    SELECT COUNT(name)
+    SELECT *
     FROM students
     WHERE grade = 10
+    ORDER BY students.id
+    LIMIT ?
     SQL
 
     DB[:conn].execute(sql, name).map do |row|
