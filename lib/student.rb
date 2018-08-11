@@ -127,7 +127,7 @@ class Student
     SELECT *
     FROM students
     WHERE grade = ?
-    ORDER BY students.id
+    ORDER BY students.grade
     LIMIT ?
     SQL
 
